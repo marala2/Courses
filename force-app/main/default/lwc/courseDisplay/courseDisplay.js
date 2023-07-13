@@ -1,3 +1,23 @@
+import { LightningElement, wire } from 'lwc';
+import getCourseDetails from '@salesforce/apex/CourseController.getCourseDetails';
+
+export default class CourseDetails extends LightningElement {
+    courseTitle;
+    courseDescription;
+
+    @wire(getCourseDetails)
+    wiredCourse({ error, data }) {
+        if (data) {
+            this.courseTitle = data.Title;
+            this.courseDescription = data.Description;
+        } else if (error) {
+            console.error('Error fetching course details: ', error);
+        }
+    }
+}
+
+/*
+
 import { LightningElement, wire, api } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 import COURSE_OBJECT from '@salesforce/schema/Course__c';
@@ -20,21 +40,7 @@ export default class CourseDisplay extends LightningElement {
     }
   }
 }
-/*import { LightningElement, wire } from 'lwc';
-import getCourseDetails from '@salesforce/apex/CourseController.getCourseDetails';
 
-export default class CourseDetails extends LightningElement {
-    courseTitle;
-    courseDescription;
 
-    @wire(getCourseDetails)
-    wiredCourse({ error, data }) {
-        if (data) {
-            this.courseTitle = data.Title;
-            this.courseDescription = data.Description;
-        } else if (error) {
-            console.error('Error fetching course details: ', error);
-        }
-    }
-}
+
 */
