@@ -2,8 +2,8 @@ import { LightningElement, wire } from 'lwc';
 import getCourseDetails from '@salesforce/apex/CourseController.getCourseDetails';
 
 export default class CourseDetails extends LightningElement {
-    courseTitle;
-    courseDescription;
+    courseTitle = "Course title will be placed here";
+    courseDescription = "course Description will be placed here";
 
     @wire(getCourseDetails)
     wiredCourse({ error, data }) {
@@ -15,6 +15,11 @@ export default class CourseDetails extends LightningElement {
         }
     }
 }
+
+
+
+
+
 
 /*
 
