@@ -1,7 +1,12 @@
 <template>
-    <div>
-      <h2>{courseTitle}</h2>
-      <p>{courseDescription}</p>
-    </div>
-  </template>
-  
+    <lightning-card>
+        <div class ="slds-maround_medium" style="font-size: large; color:blue" >
+            <p><strong>{courseTitle}</strong></p>
+            <lightning-card label = "Title" value={courseTitle}></lightning-card>
+        </div>
+        <div class ="slds-maround_medium" style="display: block; color:coral">
+            <p> {courseDescription}</p>
+            <lightning-card label = "courseDescription" value={courseDescription}></lightning-card>
+        </div>
+    </lightning-card>
+</template>
