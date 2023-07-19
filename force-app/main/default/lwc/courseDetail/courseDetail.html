@@ -1,11 +1,15 @@
 <template>
     <div style="height: 300px;">
-        <lightning-card label = "Program Details" value="courseTitle">
-                <lightning-datatable
+        <lightning-card label = "Program Details" value="courseTitle" icon-name="standard:recipe">
+            <template if:true={data}>
+                <div class="tableCss">
+                    <lightning-datatable
                         key-field="id"
                         data={data}
                         columns={columns}>
-                </lightning-datatable>
-            </lightning-card>
+                    </lightning-datatable>
+                </div>
+            </template>
+        </lightning-card>
     </div>
 </template>
