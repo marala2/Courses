@@ -8,7 +8,7 @@ const columns = [
     { label: 'Title', fieldName: 'Title__c',  cellAttributes:{class:'datatable-CellColor'}},
     { label: 'Description', fieldName: 'Description__c', type: 'text',
     cellAttributes:{
-        class:{fieldName:'descriptionColor'}
+        class:{fieldName:'descriptionColor'} 
     }}
 ];
 
